@@ -1,4 +1,4 @@
-# roubank-app
+# E-stacionar
 Este projeto visa proporcionar um sistema de controle de vagas de garagem. Suas principais funções são o monitoramento de entrada e saída de veículos, contagem de tempo utilizado por cada veículo em suas respectivas vagas e relação de vagas vazias e utilizadas.
 
 
