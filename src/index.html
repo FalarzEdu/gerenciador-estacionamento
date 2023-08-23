@@ -18,18 +18,48 @@
 
     <title>E-stacionar</title>
 </head>
-<body class="h-[800px] w-[360px]">
-    <div class="w-[360px] h-[800px] m-auto border-4 border-black">
-        <header class="h-[60px] flex items-center justify-between bg-blue-700">
+<body class="h-screen w-full text-white">
+        <header class="h-[7vh] flex items-center justify-between bg-blue-700">
             <i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-white"></i>
             <i class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-white"></i>
         </header>
-        <section class="w-full h-[120px]">
-            <div class=" bg-green-500 h-[40px] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
-                <p class="text-[18px] font-comic uppercase text-white">Modelo</p>
-            </div>
-        </section>
-
-    </div>
+        <main>
+            <section class="w-full h-[15vh]">
+                <div class=" bg-green-500 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Modelo</p>
+                </div>
+                <input type="text" placeholder="Digite o modelo do veículo">
+                
+            </section>
+            <section class="h-[35vh] w-full">
+                <div class=" bg-green-500 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Cor</p>
+                </div>
+                <div class="w-full grid-cols-4 grid h-[30vh]">
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] rounded-full m-auto bg-white border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-black rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-gray-600 rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-red-600 rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-blue-600 rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-orange-900 rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-yellow-400 rounded-full m-auto border-4 border-black"></div>
+                    <div class="w-[20vmin] h-[20vmin] max-h-[5rem] max-w-[5rem] bg-green-500 rounded-full m-auto border-4 border-black"></div>
+                </div>
+            </section>
+            <section class="h-[25vh] w-full">
+                <div class=" bg-green-500 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Placa</p>
+                </div>
+                <div>
+                    <img src="../images/placa.svg" alt="" class="m-auto h-[20vh] w-[85vw]">
+                </div>
+            </section>
+            <section class="h-[18vh] flex justify-center items-center">
+                <div class="h-[10vh] w-[85vw] bg-white border-8 border-green-500 rounded-full flex items-center relative">
+                    <i class="fa-solid fa-circle-chevron-right text-[10vh] text-green-500 absolute left-[-10px]"></i>
+                    <p class="text-green-500 text-[28px] m-auto text-center pl-[8vh]">Registrar entrada</p>
+                </div>
+            </section>
+        </main>
 </body>
 </html>

@@ -12,7 +12,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'comic': ['Comic Neue']
+        'comic': ['Comic Neue'],
+        'goldman': ['Goldman']
       }
     },
   },
