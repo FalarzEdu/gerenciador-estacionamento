@@ -552,6 +552,18 @@ video {
   margin: auto;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -572,32 +584,16 @@ video {
   margin-top: 2.5vh;
 }
 
-.mt-\[15vh\] {
-  margin-top: 15vh;
-}
-
 .mt-\[20vh\] {
   margin-top: 20vh;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .flex {
@@ -644,6 +640,10 @@ video {
   height: 35vh;
 }
 
+.h-\[4\.5vh\] {
+  height: 4.5vh;
+}
+
 .h-\[5vh\] {
   height: 5vh;
 }
@@ -656,36 +656,24 @@ video {
   height: auto;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-\[2vh\] {
-  height: 2vh;
-}
-
-.h-\[3vh\] {
-  height: 3vh;
-}
-
-.h-\[4vh\] {
-  height: 4vh;
-}
-
-.h-\[3\.5vh\] {
-  height: 3.5vh;
-}
-
-.h-\[4\.5vh\] {
-  height: 4.5vh;
-}
-
 .h-full {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
+}
+
 .max-h-\[5rem\] {
   max-height: 5rem;
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .w-\[20vmin\] {
@@ -704,6 +692,10 @@ video {
   width: 85vw;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .w-\[90vw\] {
   width: 90vw;
 }
@@ -712,20 +704,8 @@ video {
   width: 100%;
 }
 
-.w-\[80\%\] {
-  width: 80%;
-}
-
-.w-\[85\%\] {
-  width: 85%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-\[5rem\] {
@@ -764,8 +744,12 @@ video {
   border-radius: 0.375rem;
 }
 
-.border-2 {
-  border-width: 2px;
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .border-4 {
@@ -774,10 +758,6 @@ video {
 
 .border-8 {
   border-width: 8px;
-}
-
-.border-\[3px\] {
-  border-width: 3px;
 }
 
 .border-\[2px\] {
@@ -884,6 +864,10 @@ video {
   font-size: 18px;
 }
 
+.text-\[2\.5vh\] {
+  font-size: 2.5vh;
+}
+
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -901,12 +885,44 @@ video {
   line-height: 1.25rem;
 }
 
-.text-\[2\.5vh\] {
-  font-size: 2.5vh;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-.text-\[3\.5vh\] {
-  font-size: 3.5vh;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[80vw\] {
+  font-size: 80vw;
+}
+
+.text-\[10vw\] {
+  font-size: 10vw;
+}
+
+.text-\[15vw\] {
+  font-size: 15vw;
+}
+
+.text-\[20vw\] {
+  font-size: 20vw;
+}
+
+.text-\[5vw\] {
+  font-size: 5vw;
 }
 
 .font-bold {
