@@ -10,6 +10,9 @@ module.exports = {
         blue: {
           700: '#1A5B8D'
         },
+        red: {
+          700: '#D80032'
+        },
       },
       fontFamily: {
         'comic': ['Comic Neue'],
