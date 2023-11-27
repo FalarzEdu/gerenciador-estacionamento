@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/resources/css/style.css">
+
+        <!--- Font styles --------------------------------------------------------------------->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
+
+        <title>E-stacionar</title>
+    </head>
+    <body class="h-screen max-h-screen w-full text-white">
+        <header class="h-[7vh] flex items-center justify-between bg-white">
+            <a href="./main-page.html"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700"></i></a>
+            <i class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700"></i>
+        </header>
+        <main>
+            <section class="h-[30vh] w-full">
+                <div class=" bg-blue-700 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Placa</p>
+                </div>
+                <div class="w-[260px] mx-auto mt-[5vh] relative">
+                    <img src="../assets/resources/images/placa.svg" alt="" class="relatives scale-125">
+                    <p class="absolute text-black left-[10px] top-[10px] font-comic text-[62px]">ABC0D12</p>
+                </div>
+            </section>
+            <section class="w-full h-[20vh] flex flex-col">
+                <div class=" bg-blue-700 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Modelo</p>
+                </div>
+                <div type="text" placeholder="Digite o modelo do veículo" class="h-[7.5vh] max-h-14 w-[85vw] text-center text-[20px] font-comic ml-[7.5vw] mr-[7.5vw] mt-[3.75vh] mb-[3.75vh] border-4 border-blue-700 rounded-lg text-black uppercase"></div>
+            </section>
+            <section class="h-[25vh] w-full">
+                <div class=" bg-blue-700 h-[5vh] flex justify-center items-center border-t-[3px] border-b-[3px] border-black">
+                    <p class="text-[18px] font-comic uppercase text-white">Cor</p>
+                </div>
+                <div class="w-1/2 h-[12.5vh] max-w-[13rem] max-h-[8rem] border-4 border-blue-700 flex justify-center items-center m-auto mt-[3.75vh] mb-3.75vh rounded-lg">
+                    <div class="bg-black w-3/4 h-2/3 rounded-full"></div>
+                </div>
+            </section>
+            <section class="h-[18vh] flex justify-center items-center">
+                <a href="./sucesso-baixa.html" class="h-[10vh] w-[90vw] bg-white border-[6px] border-red-700 rounded-full flex items-center relative">
+                    <i class="fa-solid fa-rotate-180 fa-circle-chevron-right text-[10vh] text-red-700 absolute left-[-10px]"></i>
+                    <p class="text-red-700 text-[28px] m-auto text-center pl-[8vh] font-comic">Registrar entrada</p>
+                </a>
+            </section>
+        </main>
+    </body>
+</html>
