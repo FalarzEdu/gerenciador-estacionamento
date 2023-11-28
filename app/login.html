@@ -19,30 +19,30 @@
         <title>E-stacionar</title>
     </head>
     <body class="h-screen">
-        <header class="flex justify-between items-center px-8 bg-blue-700 w-full h-[20vh] mb-[10vh] lg:mb-[5vh]">
+        <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[10vh] lg:mb-[5vh] lg:justify-between">
             <div class="flex justify-center items-center h-[85%] w-auto">
-                <img src="../assets/resources/images/Logo.svg" class="h-auto w-[70vw] lg:h-full lg:w-auto" alt="">
+                <img src="../assets/resources/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
             </div>
             <div class="pr-16 uppercase font-comic hidden lg:block">
                 <a href="" class="text-white">Sobre</a>
             </div>
         </header>
         <main>
-            <form action="" class="flex flex-col w-[30vw] m-auto lg:border-[5px] lg:rounded-2xl lg:border-blue-700 p-4 lg:py-16">
+            <form action="" class="flex flex-col w-[90vw] m-auto lg:w-[30vw] lg:border-[5px] lg:rounded-2xl lg:border-blue-700 lg:px-4 lg:py-[3.5vh]">
                 <h1 class="text-[28px] font-goldman text-blue-700 m-auto mb-8">Entre com sua conta</h1>
 
                 <label for="name" class="text-blue-700 text-sm font-bold mb-2">Digite seu nome de usuário</label>
-                <input type="text" id="name" class="border-[2px] rounded-md border-blue-700 h-[6vh] mb-5 pl-3 outline-none" autocomplete="off">
+                <input type="text" id="name" class="border-2 rounded-md border-blue-700 h-[6vh] mb-5 pl-3 outline-none" autocomplete="off">
                 
                 <label for="password" class="text-blue-700 text-sm font-bold mb-2">Digite sua senha</label>
-                <div class="border-[2px] rounded-md border-blue-700 h-[6vh] mb-8 outline-8 outline-green-700">
+                <div class="border-2 rounded-md border-blue-700 h-[6vh] mb-8 outline-8 outline-green-700">
                     <input type="text" id="password" class="h-full w-[90%] pl-3 outline-none" autocomplete="off">
                     <i class="fa-solid fa-eye text-[2.5vh]"></i>
                 </div>
 
-                <button type="submit" class="bg-green-500 lg:h-16 lg:w-full lg:mb-8 lg:rounded-lg font-goldman text-lg text-white block">Entrar</button>
+                <button type="submit" class="bg-green-500 text-white h-[7vh] w-[90vw] mb-8 rounded-lg m-auto font-goldman text-lg block md:w-2/3 lg:h-16 lg:w-full">Entrar</button>
 
-                <a href="./register.html" class="border-4 border-green-500 h-16 w-full flex items-center justify-center rounded-lg font-goldman text-green-500">Registrar-se</a>
+                <a href="./register.html" class="h-[7vh] w-[90vw] mb-8 rounded-lg m-auto  border-4 border-green-500 flex items-center justify-center font-goldman text-green-500 md:w-2/3 lg:mb-0 lg:h-16 lg:w-full">Registrar-se</a>
             </form>
         </main>
     </body>
