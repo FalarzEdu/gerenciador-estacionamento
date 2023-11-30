@@ -14,6 +14,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="../assets/resources/css/fonts.css">
 
         <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
 
@@ -25,26 +27,42 @@
         </header>
         <main>
             <header id="header-main">
-                <p>Vagas disponíveis</p>
+                <section id="header-mobile">
+                    <p>Vagas disponíveis</p>
                 <div><span>60</span>/<span>100</span></div>
+                </section>
+                <section id="logo">
+                    <img src="../assets/resources/images/Logo.svg" alt="">
+                </section>
+                <section id="menu-desktop" class="text-menu">
+                    <a href="">Configurações</a>
+                    <a href="">Sobre</a>
+                    <a href="">Sair</a>
+                </section>
             </header>
-            <section id="grafico">
-                <div id="circulo-maior">
-                    <div id="circulo-menor"></div>
+            <section id="conteudo">
+                <div id="grafico-botoes">
+                    <section id="grafico">
+                        <div id="circulo-maior">
+                        </div>
+                    </section>
+                    <section id="botoes">
+                        <a href="./registrar-entrada.html" class="btn">
+                            <i class="fa-solid fa-circle-chevron-right"></i>
+                            <p class="">Registrar entrada</p>
+                        </a>
+                        <a href="./registrar-saida.html" class="btn">
+                            <i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i>
+                            <p class="">Registrar saída</p>
+                        </a>
+                        <a href="./vagas-lista.html" class="btn">
+                            <p class="">Vagas</p>
+                        </a>
+                    </section>
                 </div>
-            </section>
-            <section id="botoes">
-                <a href="./registrar-entrada.html">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                    <p class="">Registrar entrada</p>
-                </a>
-                <a href="./registrar-saida.html">
-                    <i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i>
-                    <p class="">Registrar saída</p>
-                </a>
-                <a href="./vagas-lista.html">
-                    <p class="">Vagas</p>
-                </a>
+                <section id="vagas">
+
+                </section>
             </section>
         </main>
     </body>

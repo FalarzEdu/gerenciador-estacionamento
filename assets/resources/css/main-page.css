@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+main {
+    height: 100vh;
+}
+
 #header-menu {
     height: 7vh;
     display: flex;
@@ -19,7 +23,7 @@ body {
     color: #1A5B8D;
 }
 
-#header-main {
+#header-mobile {
     height: 16vh;
     width: 100%;
     background-color: #1A5B8D;
@@ -28,6 +32,10 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     margin-bottom: 3rem;
+}
+
+#logo, #menu-desktop {
+    display: none;
 }
 
 #header-main p {
@@ -52,6 +60,10 @@ body {
     justify-content: center;
 }
 
+/* ---------------------------------------------------------------------------------------------
+######################################  CONTEÚDO  ##############################################
+--------------------------------------------------------------------------------------------- */
+
 #header-main div span:nth-child(2){
     font-size: 1.5rem;
 }
@@ -67,17 +79,6 @@ body {
     border-radius: 100%;
     position: relative;
 }
-
-#circulo-menor {
-    background-color: white;
-    height: 12.5rem;
-    width: 12.5rem;
-    border-radius: 100%;
-    position: absolute;
-    top: 2.5rem;
-    left: 2.5rem;
-}
-
 #botoes {
     display: flex;
     align-items: center;
@@ -85,7 +86,7 @@ body {
     gap: 2rem;
 }
 
-#botoes a {
+.btn {
     height: 8.5vh;
     width: 90vw;
     background-color: white;
@@ -135,9 +136,11 @@ body {
     border: 6px solid #22A62E;
 }
 
+/*
 #botoes a:nth-of-type(1):hover {
     background-color: #1A5B8D;
 }
+*/
 
 #botoes a:nth-of-type(2) {
     border: 6px solid #D80032;
@@ -147,3 +150,79 @@ body {
     border: 6px solid #1A5B8D;
 }
 
+/* ---------------------------------------------------------------------------------------------
+################################################################################################
+--------------------------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+    #header-menu {
+        display: none;
+    }
+
+    #header-mobile {
+        width: auto;
+        border: none;
+        margin: 0;
+        padding-left: 1rem;
+        scale: 0.8;
+    }
+
+    #header-main {
+        display: flex;
+        background: #1A5B8D;
+        justify-content: space-between;
+        align-items: center;
+        height: 17vh;
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    #logo > img {
+        height: 85%;
+        width: auto;
+    }
+
+    #menu-desktop {
+        display: flex;
+        padding-right: 4rem;
+        gap: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: 'Comic Neue';
+    }
+
+    #conteudo {
+        height: 83vh;
+    }
+
+    #grafico-botoes {
+        width: 30%;
+    }
+
+    #vagas {
+        width: 70%;
+    }
+
+    .btn {
+        height: 9vh;
+        width: 75%;
+    }
+
+    #botoes a:nth-of-type(3) {
+        display: none;
+    }
+}
+
+@media (min-width: 1536px) {
+    #header-mobile {
+        width: auto;
+        border: none;
+        margin: 0;
+        padding-left: 2rem;
+        scale: 1;
+    }
+}

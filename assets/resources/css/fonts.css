@@ -1,0 +1,23 @@
+.text-button {
+    font-size: clamp(1.15rem, 0.95rem + 2vw, 1.75rem);
+}
+
+@media (min-width: 1024px) {
+    .text-button {
+        font-size: clamp(1.75rem, 0.8929rem + 1.3393vw, 2.5rem);
+    }
+}
+
+.text-menu {
+    font-size: clamp(0.875rem, -0.125rem + 1.5625vw, 1.25rem);
+}
+
+.text-tag {
+    font-size: clamp(0.75rem, 0.4207rem + 1.8817vw, 1.625rem);
+}
+
+@media (min-width: 1024px) {
+    .text-tag {
+        font-size: clamp(1.125rem, 0.6964rem + 0.6696vw, 1.5rem);
+    }
+}
