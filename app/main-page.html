@@ -14,18 +14,25 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+
+         <!--- Font Size --------------------------------------------------->
         
         <link rel="stylesheet" href="../assets/resources/css/fonts.css">
 
+                <!--- Font Awesome ----------------------------------------->
+
         <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
+
+        <script src="../assets/libraries/jquery/dist/jquery.js"></script>
 
         <title>E-stacionar</title>
     </head>
     <body>
         <header id="header-menu">
-            <i id="menu-button" class="fa-solid fa-bars"></i>
+                <i id="menu-abrir" class="fa-solid fa-bars toggle-menu"></i>
         </header>
         <main>
+            </div>
             <header id="header-main">
                 <section id="header-mobile">
                     <p>Vagas disponíveis</p>
@@ -49,21 +56,42 @@
                     <section id="botoes">
                         <a href="./registrar-entrada.html" class="btn">
                             <i class="fa-solid fa-circle-chevron-right"></i>
-                            <p class="">Registrar entrada</p>
+                            <p class="text-button">Registrar entrada</p>
                         </a>
                         <a href="./registrar-saida.html" class="btn">
                             <i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i>
-                            <p class="">Registrar saída</p>
+                            <p class="text-button">Registrar saída</p>
                         </a>
                         <a href="./vagas-lista.html" class="btn">
-                            <p class="">Vagas</p>
+                            <p class="text-button">Vagas</p>
                         </a>
                     </section>
                 </div>
                 <section id="vagas">
-
+                    
                 </section>
             </section>
         </main>
+        <div id="menu-lateral">
+            <header>
+                <i id="menu-fechar" class="fa-solid fa-xmark toggle-menu"></i>
+            </header>
+            <div id="menu">
+                <a href="#">
+                    <i class="fa-solid fa-gears"></i>
+                    <p>Configurações</p>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-info"></i>
+                    <p>Sobre</p>
+                </a>
+                <a href="./login.html">
+                    <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+        <script src="../assets/resources/js/gerador-vagas.js"></script>
+        <script src="../assets/resources/js/main.js"></script>
     </body>
 </html>

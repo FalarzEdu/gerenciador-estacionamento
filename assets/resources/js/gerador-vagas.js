@@ -6,3 +6,14 @@ window.addEventListener('load', ()=> {
         document.querySelector("ul").appendChild(vagaNova);
     }
 })
+
+
+window.addEventListener('load', ()=> {
+    let div = '';
+    for (let i = 1; i <= 100; i++) {
+        div = document.createElement('div');
+        div.classList.add('vaga');
+        div.id = "vaga-" + i;
+        document.querySelector('#vagas').appendChild(div);
+    }
+})

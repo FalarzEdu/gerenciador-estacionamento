@@ -4,7 +4,53 @@ body {
 }
 
 main {
+    height: 77vh;
+}
+
+#menu-lateral {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
     height: 100vh;
+    width: 75vw;
+    z-index: 2;
+    background-color: #1A5B8D;
+    box-shadow: -150px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+#menu-lateral header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 7vh;
+    border-bottom: 4px solid black;
+}
+
+#menu-lateral header i {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+}
+
+#menu {
+    padding: 1.5rem 0 0 2rem;
+}
+
+#menu > a{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#menu  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    width: 1rem;
+    font-size: 28px;
 }
 
 #header-menu {
@@ -15,7 +61,7 @@ main {
     background-color: white;
 }
 
-#menu-button {
+#menu-abrir, #menu-fechar {
     height: 30px;
     width: 30px;
     font-size: 30px;
@@ -27,11 +73,10 @@ main {
     height: 16vh;
     width: 100%;
     background-color: #1A5B8D;
-    border-top: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-bottom: 3rem;
+    border-top: 3px solid black;
 }
 
 #logo, #menu-desktop {
@@ -55,42 +100,46 @@ main {
     color: #22A62E;
 }
 
-#grafico {
-    display: flex;
-    justify-content: center;
-}
-
-/* ---------------------------------------------------------------------------------------------
-######################################  CONTEÚDO  ##############################################
---------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------
+##############################  CONTEÚDO  ###################################
+------------------------------------------------------------------------ */
 
 #header-main div span:nth-child(2){
     font-size: 1.5rem;
 }
 
+#grafico-botoes {
+    padding: 1rem 0 1rem 0;
+}
+
 #grafico {
-    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    width: 70vw;
+    height: 70vw;
 }
 
 #circulo-maior {
-    height: 17.5rem;
-    width: 17.5rem;
+    height: 100%;
+    width: 100%;
     background-color: #22A62E;
     border-radius: 100%;
-    position: relative;
 }
+
 #botoes {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    row-gap: 2vh;
 }
 
 .btn {
     height: 8.5vh;
     width: 90vw;
     background-color: white;
-    border-radius: 3rem;
+    border-radius: 9999px;
+    border-width: 6px;
     display: flex;
     align-items: center;
     position: relative;
@@ -103,8 +152,7 @@ main {
 }
 
 #botoes p {
-    font-size: 1.75rem;
-    margin-left: 6rem;
+    margin-left: 23%;
 }
 
 #botoes :nth-child(1) > p,
@@ -133,7 +181,7 @@ main {
 }
 
 #botoes a:nth-of-type(1) {
-    border: 6px solid #22A62E;
+    border-color: #22A62E;
 }
 
 /*
@@ -143,18 +191,40 @@ main {
 */
 
 #botoes a:nth-of-type(2) {
-    border: 6px solid #D80032;
+    border-color: #D80032;
 }
 
 #botoes a:nth-of-type(3) {
-    border: 6px solid #1A5B8D;
+    border-color: #1A5B8D;
 }
 
 /* ---------------------------------------------------------------------------------------------
 ################################################################################################
 --------------------------------------------------------------------------------------------- */
 
+@media (min-height: 740px) {
+    #grafico {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 1rem auto;
+        width: 82vw;
+        height: 82vw;
+    }
+
+    #grafico-botoes {
+        padding: 1rem 0 1rem 0;
+    }
+
+    #botoes {
+        row-gap: 2.5vh;
+    }
+}
+
 @media (min-width: 1024px) {
+    main {
+        height: 100vh;
+    }
+
     #header-menu {
         display: none;
     }
@@ -196,20 +266,60 @@ main {
     }
 
     #conteudo {
+        display: flex;
         height: 83vh;
     }
 
     #grafico-botoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 30%;
+        height: 83vh;
+        gap: 5%;
     }
 
-    #vagas {
-        width: 70%;
+    #grafico {
+        margin: 0;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    #botoes {
+        width: 100%;
+    }
+
+    #botoes i {
+        font-size: 11vh;
+    }
+
+    #botoes p {
+        margin-left: 11.5vh;
     }
 
     .btn {
-        height: 9vh;
-        width: 75%;
+        height: 11vh;
+        width:85%;
+        border-width: 8px;
+    }
+
+    #vagas {
+        padding: 5% 3% 5% 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5%;
+        width: 70%;
+    }
+
+    .vaga {
+        flex: 1 1 3.5%;
+        width: 3.5%;
+        height: 10%;
+        height: 3rem;
+        background-color: #22A62E;
     }
 
     #botoes a:nth-of-type(3) {
@@ -222,7 +332,24 @@ main {
         width: auto;
         border: none;
         margin: 0;
-        padding-left: 2rem;
+        padding-left: 6rem;
         scale: 1;
+    }
+
+    #header-main p {
+        font-family: 'Goldman';
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    #header-main div {
+        font-family: 'Goldman';
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    
+    #header-main div span:nth-child(1) {
+        color: #22A62E;
     }
 }
