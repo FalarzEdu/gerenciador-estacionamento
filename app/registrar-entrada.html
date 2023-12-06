@@ -49,7 +49,7 @@
                             <p class="text-tag font-comic uppercase text-white">Modelo</p>
                         </div>
                         <div class="lg:flex lg:items-center h-[10vh] lg:h-[37vh]">
-                            <input type="text" placeholder="Digite o modelo do veículo" class="text-black h-[5vh] w-[85vw] text-base 2xl:text-2xl font-comic mt-[2.5vh] ml-[7.5vw] mr-[7.5vw] border-4 border-blue-700 rounded-lg lg:w-[80%] lg:mx-[10%] uppercase text-center" pattern="[a-zA-Z]+" required>
+                            <input id="modelo" type="text" placeholder="Digite o modelo do veículo" class="text-black h-[5vh] w-[85vw] text-base 2xl:text-2xl font-comic mt-[2.5vh] ml-[7.5vw] mr-[7.5vw] border-4 border-blue-700 rounded-lg lg:w-[80%] lg:mx-[10%] uppercase text-center" pattern="[a-zA-Z]+" required>
                         </div>
                     </section>
                     <section class="h-[35vh] lg:h-auto w-full lg:order-3">
@@ -77,7 +77,7 @@
                         <div class="lg:flex lg:flex-c lg:justify-center lg:items-center lg:h-[37vh]">
                             <div class="w-[260px] mx-auto mt-[5vh] scale-120 relative 2xl:scale-150">
                                 <img src="../assets/resources/images/placa.svg " alt="" class="relative">
-                                <input type="text" name="" id="" class="absolute text-black left-[15px] top-[25px] font-comic text-[60px] w-[230px] h-[60px] bg-transparent uppercase" pattern="([a-z]{3})(\d{1})([a-z]{1})(\d{2})" maxlength="7" minlength="7" required>
+                                <input type="text" name="" id="placa" class="absolute text-black left-[15px] top-[25px] font-comic text-[46px] text-center w-[230px] h-[60px] bg-transparent uppercase" pattern="([a-z]{3})(\d{1})([a-z]{1})(\d{2})" maxlength="7" minlength="7" required>
                             </div>
                         </div>
                     </section>
@@ -115,7 +115,7 @@
         </div>
         <div class="z-10 bg-opacity-75 bg-black w-full h-full fixed top-0 left-0 hidden" id="blur">
         </div>
-        <div class="flex-col justify-around items-center z-40 rounded-lg lg:w-1/2 lg:h-1/2 fixed top-1/4 left-1/4 bg-blue-700 shadow-black hidden" id="popup">
+        <div class="hidden flex-col justify-around items-center z-40 rounded-lg w-4/5 h-[30vh] lg:w-1/2 lg:h-1/2 fixed left-[10%] top-[35vh] lg:top-1/4 lg:left-1/4 bg-blue-700 shadow-black" id="popup">
             <h2 class="text-center text-3xl">Preencha os dados corretamente!</h2>
             <div class="bg-white flex justify-center rounded-full">
                 <button class="px-[3rem] py-[1rem] text-blue-700 text-lg" id="esconder" onclick="fechar()">OK</button>
