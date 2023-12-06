@@ -22,6 +22,15 @@ $("#submit").on('click', function validarForm(e) {
     e.preventDefault();
     // Se o form estiver ok, pega os dados e coloca no localStorage
     if((document.querySelector("form").checkValidity())) {
+        
+        if((JSON.parse(localStorage.getItem('vaga')) != null)) {
+            const vaga = Number(JSON.parse(localStorage.getItem('vaga')));
+            if(vaga <= 100) localStorage.setItem('vaga', vaga + 1);
+        }
+        else {
+            localStorage.setItem('vaga', 1);
+        }
+
         var carro = {
             modelo: $("#modelo").val(),
             cor: color,

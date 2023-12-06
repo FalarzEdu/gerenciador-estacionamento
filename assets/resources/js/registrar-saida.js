@@ -11,6 +11,7 @@ $("#placa").on('keyup', function checarPlaca() {
         }
         else { // Se a placa não existir, ativa o popup de erro
             $("#blur").css('display', 'block');
+            $("#popup").children("h2").text("Placa inexistente!");
             $("#popup").css('display', 'flex');
         }
     }
@@ -24,7 +25,20 @@ $("#submit").on('click', function validarCampos(e) {
     e.preventDefault()
     const form = document.querySelector("form");
     if(form.checkValidity()) {
-        window.location.href="../../../app/sucesso-baixa.html"
+
+        const vaga = Number(JSON.parse(localStorage.getItem('vaga')));
+        if(vaga > 0) localStorage.setItem('vaga', vaga - 1);
+    
+        const placa = $("#placa").val();
+        const obj = JSON.parse(localStorage.getItem(placa));
+        const hora = obj.hora;
+        sessionStorage.setItem('last', JSON.stringify(hora));
+        window.location.href="../../../app/sucesso-baixa.html";
+    }
+    else {
+        $("#blur").css('display', 'block');
+        $("#popup").children("h2").text("Preencha os campos corretamente!");
+        $("#popup").css('display', 'flex');
     }
 })
 

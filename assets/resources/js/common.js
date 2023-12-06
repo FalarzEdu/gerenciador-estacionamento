@@ -7,5 +7,3 @@ $(".toggle-menu").on('click', (e)=> {
         $("#menu-lateral").css("display", "none");
     }
 })
-
-/* ------------- Validações de form ------------- */

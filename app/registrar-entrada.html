@@ -49,7 +49,7 @@
                             <p class="text-tag font-comic uppercase text-white">Modelo</p>
                         </div>
                         <div class="lg:flex lg:items-center h-[10vh] lg:h-[37vh]">
-                            <input id="modelo" type="text" placeholder="Digite o modelo do veículo" class="text-black h-[5vh] w-[85vw] text-base 2xl:text-2xl font-comic mt-[2.5vh] ml-[7.5vw] mr-[7.5vw] border-4 border-blue-700 rounded-lg lg:w-[80%] lg:mx-[10%] uppercase text-center" pattern="[a-zA-Z]+" required>
+                            <input id="modelo" type="text" placeholder="Digite o modelo do veículo" class="text-black h-[5vh] w-[85vw] text-base 2xl:text-2xl font-comic mt-[2.5vh] ml-[7.5vw] mr-[7.5vw] border-4 border-blue-700 rounded-lg lg:w-[80%] lg:mx-[10%] uppercase text-center" pattern="[a-zA-Z]+" required autocomplete="off">
                         </div>
                     </section>
                     <section class="h-[35vh] lg:h-auto w-full lg:order-3">
@@ -83,11 +83,11 @@
                     </section>
                 </section>
                 <section class="h-[18vh] flex justify-center items-center lg:gap-28">
-                    <button class="h-[10vh] lg:h-[12vh] 2xl:h-[10vh] w-[90vw] max-w-sm lg:w-1/3 2xl:w-1/2 lg:max-w-[24rem] 2xl:max-w-[30rem] bg-white border-[6px] 2xl:border-8 border-green-500 rounded-full flex items-center relative" id="submit" type="submit">
+                    <button class="h-[10vh] lg:h-[12vh] 2xl:h-[10vh] w-[90vw] max-w-sm lg:w-1/3 2xl:w-1/2 lg:max-w-[24rem] 2xl:max-w-[30rem] bg-white border-[6px] 2xl:border-8 border-green-500 rounded-full flex items-center relative hover:bg-green-300" id="submit" type="submit">
                         <i class="fa-solid fa-circle-chevron-right text-[10vh] lg:text-[12vh] 2xl:text-[10vh] text-green-500 absolute left-[-10px]"></i>
                         <p class="text-green-500 text-button m-auto text-center pl-[8vh] font-bold">Registrar entrada</p>
                     </button>
-                    <a class="h-[10vh] lg:h-[12vh] lg:max-h-[7rem] bg-white border-[6px] border-blue-700 rounded-full items-center relative hidden lg:flex w-56 2xl:w-64" href="">
+                    <a class="h-[10vh] lg:h-[12vh] lg:max-h-[7rem] bg-white border-[6px] border-blue-700 rounded-full items-center relative hidden lg:flex w-56 2xl:w-64 lg:hover:bg-blue-300" href="">
                         <img src="../assets/resources/images/seta.svg" alt="" class="text-[10vh] text-blue-700 absolute left-[25px]">
                         <p class="text-blue-700 text-button m-auto text-center pl-[8vh] font-bold">Voltar</p>
                     </a>
@@ -121,7 +121,7 @@
                 <button class="px-[3rem] py-[1rem] text-blue-700 text-lg" id="esconder" onclick="fechar()">OK</button>
             </div>
         </div>
-        <script src="../assets/resources/js/main.js"></script>
+        <script src="../assets/resources/js/common.js"></script>
         <script src="../assets/resources/js/registrar-entrada.js"></script>
     </body>
 </html>
