@@ -33,6 +33,7 @@ $("#submit").on('click', function validarCampos(e) {
         const obj = JSON.parse(localStorage.getItem(placa));
         const hora = obj.hora;
         sessionStorage.setItem('last', JSON.stringify(hora));
+        localStorage.removeItem(placa);
         window.location.href="../../../app/sucesso-baixa.html";
     }
     else {

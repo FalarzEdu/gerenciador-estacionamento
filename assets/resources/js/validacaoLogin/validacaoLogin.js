@@ -1,28 +1,47 @@
+window.addEventListener('load', ()=> {
+    const lembrar = JSON.parse(localStorage.getItem('lembrar'));
+    if(lembrar) {
+        const dados = JSON.parse(localStorage.getItem('usuario'));
+        $("#name").val(dados.nome);
+        $("#remember").prop('checked', true)
+        return
+    }
+    return
+})
+
 /*-------------------------------------------------
 ################### SUBMIT #########################
-------------------------------------------------- */ 
+-------------------------------------------------*/ 
 $("#submit").on('click', (e)=> {
     e.preventDefault();
 
-    if($("#pass").val() != $("#passConf").val()) {
-        $("pass").parent().css("border-color", "red");
-        $("#pass").parent().next("small").html("Senhas não conferem!");
-        $("#passConf").parent().next("small").html("Senhas não conferem!");
-        $("#pass").parent().next("small").css("visibility", "visible");
-        $("#passConf").parent().next("small").css("visibility", "visible");
-        $("#pass").parent().css("border-color", "red");
-        $("#passConf").parent().css("border-color", "red");
+    const dados = JSON.parse(localStorage.getItem('usuario'));
+    if(($("#name").val() == dados.nome) && ($("#password").val() == dados.senha)) {
+        window.location.href="./main-page.html"
     }
     else {
-        $("#pass").parent().next("small").css("visibility", "hidden");
-        $("#passConf").parent().next("small").css("visibility", "hidden");
+        $("#password").val('');
+        /*
+        COLOCAR MENSAGEM DE ERRO
+        */
     }
 
-    const form = document.querySelector("form");
-    if(!(form.checkValidity())) {
-        
+})
+
+/*-------------------------------------------------
+############## LEMBRAR USUÁRIO ####################
+------------------------------------------------- */
+
+$("#remember").on('click', function lembrar() {
+    let lembrar = JSON.parse(localStorage.getItem('lembrar'));
+
+    if(lembrar == null) {
+        localStorage.setItem('lembrar', $("#remember").prop('checked'));
+        return
     }
-});
+    if(lembrar) localStorage.setItem('lembrar', false);
+    if(!lembrar) localStorage.setItem('lembrar', true);
+})
 
 /*-------------------------------------------------
 ################# VALIDAÇÃO #######################

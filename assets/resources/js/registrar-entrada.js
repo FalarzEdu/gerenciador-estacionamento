@@ -21,7 +21,7 @@ $(".color-pick").on('click', (e)=> {
 $("#submit").on('click', function validarForm(e) {
     e.preventDefault();
     // Se o form estiver ok, pega os dados e coloca no localStorage
-    if((document.querySelector("form").checkValidity())) {
+    if((document.querySelector("form").checkValidity()) && (color != '')) {
         
         if((JSON.parse(localStorage.getItem('vaga')) != null)) {
             const vaga = Number(JSON.parse(localStorage.getItem('vaga')));
