@@ -12,7 +12,7 @@ $("#submit").on('click', (e)=> {
         }
 
         localStorage.setItem('usuario', JSON.stringify(obj));
-        window.location.href="../../../app/login.html";
+        window.location.href="../../../login.html";
         return;
     }
 
