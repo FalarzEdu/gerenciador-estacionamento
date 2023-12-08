@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/resources/css/style.css">
-        <link rel="stylesheet" href="../assets/resources/css/main-page.css">
 
-        <!--- Font styles --------------------------------------------------------------------->
+        <!---- Styles --------------------------------------------->
+
+        <link rel="stylesheet" href="../../../assets/resources/css/style.css">
+        <link rel="stylesheet" href="../../../assets/resources/css/pagina-principal.css">
+
+        <!--- Font styles ----------------------------------------->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +18,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 
-         <!--- Font Size --------------------------------------------------->
+         <!--- Font Size ------------------------------------------->
         
-        <link rel="stylesheet" href="../assets/resources/css/fonts.css">
+        <link rel="stylesheet" href="../../../assets/resources/css/fontes.css">
 
-                <!--- Font Awesome ----------------------------------------->
+        <!--- Font Awesome ----------------------------------------->
 
         <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
 
-        <script src="../assets/libraries/jquery/dist/jquery.js"></script>
+        <!---- Jquery ----------------------------------------------->
+
+        <script src="../../../assets/libraries/jquery/dist/jquery.min.js"></script>
+
+        <!---- Chart.js --------------------------------------------->
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
         <title>E-stacionar</title>
     </head>
@@ -39,19 +48,18 @@
                 <div><span id="numVagas">100</span>/<span>100</span></div>
                 </section>
                 <section id="logo">
-                    <img src="../assets/resources/images/Logo.svg" alt="">
+                    <img src="../../../assets/resources/images/Logo.svg" alt="">
                 </section>
                 <section id="menu-desktop" class="text-menu">
-                    <a href="">Configurações</a>
+                    <a href="../cadastro-info/cep.html">Configurações</a>
                     <a href="">Sobre</a>
-                    <a href="">Sair</a>
+                    <a href="../../../login.html">Sair</a>
                 </section>
             </header>
             <section id="conteudo">
                 <div id="grafico-botoes">
                     <section id="grafico">
-                        <div id="circulo-maior">
-                        </div>
+                        <canvas id="donut"></canvas>
                     </section>
                     <section id="botoes">
                         <a href="./registrar-entrada.html" class="btn" id="registrar">
@@ -77,7 +85,7 @@
                 <i id="menu-fechar" class="fa-solid fa-xmark toggle-menu"></i>
             </header>
             <div id="menu">
-                <a href="./usuario.html">
+                <a href="../cadastro-info/cep.html">
                     <i class="fa-solid fa-gears"></i>
                     <p>Configurações</p>
                 </a>
@@ -85,14 +93,13 @@
                     <i class="fa-solid fa-info"></i>
                     <p>Sobre</p>
                 </a>
-                <a href="./login.html">
+                <a href="../../../login.html">
                     <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
                     <p>Sair</p>
                 </a>
             </div>
         </div>
-        <script src="../assets/resources/js/gerador-vagas.js"></script>
-        <script src="../assets/resources/js/common.js"></script>
-        <script src="../assets/resources/js/main-page.js"></script>
+        <script src="../../../assets/resources/js/common.js"></script>
+        <script src="../../../assets/resources/js/pagina-principal.js"></script>
     </body>
 </html>

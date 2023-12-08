@@ -1,6 +1,5 @@
-$(".toggle-menu").on('click', (e)=> {
-    const display = $("#menu-lateral").css("display");
-    if(display == 'none') {
+$(".toggle-menu").on('click', ()=> {
+    if($("#menu-lateral").css("display") == 'none') {
         $("#menu-lateral").css("display", "block");
     }
     else {

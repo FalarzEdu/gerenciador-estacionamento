@@ -17,13 +17,11 @@ $("#submit").on('click', (e)=> {
 
     const dados = JSON.parse(localStorage.getItem('usuario'));
     if(($("#name").val() == dados.nome) && ($("#password").val() == dados.senha)) {
-        window.location.href="./main-page.html"
+        window.location.href="./app/pages/principais/pagina-principal.html"
     }
     else {
         $("#password").val('');
-        /*
-        COLOCAR MENSAGEM DE ERRO
-        */
+        alert("Usuário inexistente!")
     }
 
 })
@@ -67,9 +65,13 @@ $(".fa-eye").on('click', (e)=> {
     const state = $(e.target).prev('input').attr('type');
     if(state == 'password') {
         $(e.target).prev('input').attr('type', 'text');
+        $(e.target).toggleClass('fa-eye');
+        $(e.target).toggleClass('fa-eye-slash');
+        
     }
     else {
         $(e.target).prev('input').attr('type', 'password');
+        $(e.target).toggleClass('fa-eye');
+        $(e.target).toggleClass('fa-eye-slash');
     }
-    
 })

@@ -41,7 +41,7 @@ $("#submit").on('click', function validarForm(e) {
 
         localStorage.setItem(placa, JSON.stringify(carro));
 
-        window.location.href="../../../app/sucesso-registro.html"
+        window.location.href="../paginas-sucesso/sucesso-registro.html"
     }
     else { //Caso o form esteja errado, ativa o popup de erro
         $("#blur").css('display', 'block');

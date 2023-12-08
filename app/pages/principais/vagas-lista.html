@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/resources/css/style.css">
-        <link rel="stylesheet" href="../assets/resources/css/main-page.css">
+
+        <!---- Styles --------------------------------------------->
+
+        <link rel="stylesheet" href="../../../assets/resources/css/style.css">
+        <link rel="stylesheet" href="../../../assets/resources/css/pagina-principal.css">
 
         <!--- Font styles --------------------------------------------------------------------->
 
@@ -15,15 +18,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 
+        <!--- Font Awesome ----------------------------------------->
+
         <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
 
-        <script src="../assets/libraries/jquery/dist/jquery.js"></script>
+        <!---- Jquery ----------------------------------------------->
+
+        <script src="../../../assets/libraries/jquery/dist/jquery.min.js"></script>
 
         <title>E-stacionar</title>
     </head>
     <body class="h-screen max-h-screen w-full text-white">
         <header class="h-[7vh] flex items-center justify-between bg-white">
-            <a href="./main-page.html"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700"></i></a>
+            <a href="./pagina-principal.html"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700"></i></a>
             <i id="menu-abrir" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 toggle-menu"></i>
         </header>
         <main>
@@ -46,7 +53,7 @@
                 <i id="menu-fechar" class="fa-solid fa-xmark toggle-menu"></i>
             </header>
             <div id="menu">
-                <a href="#">
+                <a href="../cadastro-info/cep.html">
                     <i class="fa-solid fa-gears"></i>
                     <p>Configurações</p>
                 </a>
@@ -54,13 +61,13 @@
                     <i class="fa-solid fa-info"></i>
                     <p>Sobre</p>
                 </a>
-                <a href="./login.html">
+                <a href="../../../login.html">
                     <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
                     <p>Sair</p>
                 </a>
             </div>
         </div>
     </body>
-    <script src="../assets/resources/js/common.js"></script>
-    <script src="../assets/resources/js/gerador-vagas.js"></script>
+    <script src="../../../assets/resources/js/common.js"></script>
+    <script src="../../../assets/resources/js/gerador-vagas.js"></script>
 </html>

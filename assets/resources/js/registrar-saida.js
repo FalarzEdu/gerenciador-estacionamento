@@ -34,7 +34,7 @@ $("#submit").on('click', function validarCampos(e) {
         const hora = obj.hora;
         sessionStorage.setItem('last', JSON.stringify(hora));
         localStorage.removeItem(placa);
-        window.location.href="../../../app/sucesso-baixa.html";
+        window.location.href="../paginas-sucesso/sucesso-baixa.html";
     }
     else {
         $("#blur").css('display', 'block');

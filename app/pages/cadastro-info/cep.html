@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!---- Styles --------------------------------------------->
+
+        <link rel="stylesheet" href="../../../assets/resources/css/style.css">
+        <link rel="stylesheet" href="../../../assets/resources/css/pagina-principal.css">
+
+        <!--- Font styles ------------------------------------------>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+
+        <!--- Font Size ------------------------------------------->
+
+        <link rel="stylesheet" href="../../../assets/resources/css/fontes.css">
+
+        <!--- Font Awesome ----------------------------------------->
+
+        <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
+
+        <!---- Jquery ----------------------------------------------->
+        
+        <script src="../../../assets/libraries/jquery/dist/jquery.min.js"></script>
+        <script src="../../../assets/libraries/jquery/plugin/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+
+        <title>E-stacionar</title>
+    </head>
+    <body class="h-screen">
+        <header class="h-[7vh] flex items-center justify-between bg-white border-b-2 border-black lg:bg-blue-700 lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
+            <a href="../principais/pagina-principal.html" class="lg:hidden"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 block lg:hidden"></i></a>
+            <i id="menu-abrir" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu"></i>
+            <div class="hidden lg:flex justify-center items-center h-[85%] w-auto">
+                <img src="../../../assets/resources/images/Logo.svg" class="h-[95%] w-auto pl-16" alt="">
+            </div>
+            <div class="lg:pr-16 uppercase font-comic hidden lg:block text-menu text-white">
+                <a href="">Configurações</a>
+                <a href="" class="px-8">Sobre</a>
+                <a href="../../../login.html">Sair</a>
+            </div>
+        </header>
+        <main>
+            <form action="" id="" novalidate class="flex flex-col w-[90vw] m-auto lg:w-[30vw] lg:border-[5px] lg:rounded-2xl lg:border-blue-700 lg:px-4 lg:py-[3.5vh] text-black">
+                <h1 class="text-[28px] font-goldman text-blue-700 m-auto mb-4">Coloque seu CEP</h1>
+
+                <label for="cep" class="text-blue-700 text-sm font-bold mb-2">Digite seu CEP</label>
+                <div class=" mb-1 flex flex-col">
+                    <div class="border-2 rounded-md border-blue-700 mb-1">
+                        <input type="text" id="cep" class="h-[5vh] w-full pl-3 outline-none text-black" autofocus autocomplete="off" pattern="([\d]{5})-([\d]{3})" required placeholder="12345-678" maxlength="8">
+                    </div>
+                    <small class="text-red-600 text-sm invisible">Entrada inválida!</small>
+                </div>
+                <label for="estado" class="text-blue-700 text-sm font-bold mb-2">Estado</label>
+                <div class=" mb-2 flex flex-col">
+                    <div class="border-2 rounded-md border-blue-700 mb-1 h-[5vh] w-full pl-3">
+                        <output type="text" id="estado"></output>
+                    </div>
+                </div>
+                <label for="cidade" class="text-blue-700 text-sm font-bold mb-2">Cidade</label>
+                <div class=" mb-2 flex flex-col">
+                    <div class="border-2 rounded-md border-blue-700 mb-1 h-[5vh] w-full pl-3">
+                        <output type="text" id="cidade"></output>
+                    </div>
+                </div>
+                <label for="rua" class="text-blue-700 text-sm font-bold mb-2">Rua</label>
+                <div class=" mb-8 flex flex-col">
+                    <div class="border-2 rounded-md border-blue-700 mb-1 h-[5vh] w-full pl-3">
+                        <output type="text" id="rua"></output>
+                    </div>
+                </div>
+                <a href="../principais/pagina-principal.html" class="bg-green-500 text-white h-[7vh] w-[90vw] mb-8 rounded-lg m-auto font-goldman text-center p-[5%] text-lg block md:w-2/3 lg:h-14 lg:w-full">Confirmar localização</a>
+            </form>
+        </main>
+        <div id="menu-lateral">
+            <header>
+                <i id="menu-fechar" class="fa-solid fa-xmark toggle-menu"></i>
+            </header>
+            <div id="menu">
+                <a href="#">
+                    <i class="fa-solid fa-gears"></i>
+                    <p>Configurações</p>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-info"></i>
+                    <p>Sobre</p>
+                </a>
+                <a href="../../../login.html">
+                    <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+        <script src="../../../assets/resources/js/common.js"></script>
+        <script src="../../../assets/resources/js/cep.js"></script>
+    </body>
+</html>
+   
