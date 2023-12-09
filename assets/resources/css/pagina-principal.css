@@ -113,8 +113,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 0 auto 1rem auto;
-    width: 60vw;
-    height: 60vw;
+    height: 40vh;
 }
 
 #circulo-maior {
@@ -204,8 +203,6 @@ body {
         display: flex;
         justify-content: center;
         margin: 0 auto 1rem auto;
-        width: 75vw;
-        height: 75vw;
     }
 
     #botoes {

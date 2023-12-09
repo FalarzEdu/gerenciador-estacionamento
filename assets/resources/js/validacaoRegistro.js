@@ -38,8 +38,6 @@ $("#submit").on('click', (e)=> {
             $("#passConf").parent().next("small").css("visibility", "hidden");
         }
     }
-
-    
 });
 
 /*-------------------------------------------------
@@ -48,9 +46,13 @@ $("#submit").on('click', (e)=> {
 
 $("input").on('keyup', (e)=> {
     if(!(e.target.checkValidity())) {
+        if($(e.target).attr('id') == 'name') {
+            $(e.target).parent().next("small").html("Entrada inválida")
+        } else {
+            $(e.target).parent().next("small").html("Mínimo de 6 dígitos!")
+        }
         $(e.target).parent().css("border-color", "red");
         $(e.target).parent().next("small").css("visibility", "visible");
-        $(e.target).parent().next("small").html("Entrada inválida!");
     }
     else {
         $(e.target).parent().css("border-color", "#1A5B8D");
