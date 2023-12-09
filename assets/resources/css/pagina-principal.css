@@ -1,10 +1,7 @@
 body {
-    height: 100vh;
+    height: auto;
+    max-height: 100vh;
     color: white;
-}
-
-main {
-    height: 77vh;
 }
 
 #menu-lateral {
@@ -109,15 +106,15 @@ main {
 }
 
 #grafico-botoes {
-    padding: 1rem 0 1rem 0;
+    padding: 0rem 0 1rem 0;
 }
 
 #grafico {
     display: flex;
     justify-content: center;
     margin: 0 auto 1rem auto;
-    width: 70vw;
-    height: 70vw;
+    width: 60vw;
+    height: 60vw;
 }
 
 #circulo-maior {
@@ -207,12 +204,8 @@ main {
         display: flex;
         justify-content: center;
         margin: 0 auto 1rem auto;
-        width: 82vw;
-        height: 82vw;
-    }
-
-    #grafico-botoes {
-        padding: 1rem 0 1rem 0;
+        width: 75vw;
+        height: 75vw;
     }
 
     #botoes {

@@ -27,8 +27,8 @@
 
         <title>E-stacionar</title>
     </head>
-    <body class="h-screen">
-        <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[10vh] lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
+    <body class="h-auto max-h-screen">
+        <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[2.5vh] lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
             <div class="flex justify-center items-center h-[85%] w-auto">
                 <img src="./assets/resources/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
             </div>
@@ -48,7 +48,7 @@
                     <small class="text-red-600 text-sm invisible">Entrada inválida!</small>
                 </div>
                 <label for="password" class="text-blue-700 text-sm font-bold mb-2">Digite sua senha</label>
-                <div class="mb-6 outline-8 outline-green-700">
+                <div class="mb-2 outline-8 outline-green-700">
                     <div class="h-[5vh] border-2 rounded-md border-blue-700">
                         <input type="password" id="password" class="h-full w-[90%] pl-3 outline-none" autocomplete="off" required minlength="6">
                         <i id="relevarSenha" class="fa-solid fa-eye text-[2.5vh]" aria-placeholder="Senha"></i>
@@ -56,7 +56,7 @@
                     <small class="text-sm text-red-600 invisible">Entrada inválida!</small>
                 </div>
 
-                <button type="submit" id="submit" class="bg-green-500 text-white h-[7vh] w-[90vw] mb-8 rounded-lg m-auto font-goldman text-lg block md:w-2/3 lg:h-14 lg:w-full">Entrar</button>
+                <button type="submit" id="submit" class="bg-green-500 text-white h-[7vh] w-[90vw] mb-4 rounded-lg m-auto font-goldman text-lg block md:w-2/3 lg:h-14 lg:w-full">Entrar</button>
 
                 <a href="./app/pages/cadastro-usuario/registro.html" class="h-[7vh] w-[90vw] mb-8 rounded-lg m-auto  border-4 border-green-500 flex items-center justify-center font-goldman text-green-500 md:w-2/3 lg:mb-0 lg:h-14 lg:w-full">Registrar-se</a>
 
