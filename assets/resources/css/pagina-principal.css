@@ -272,8 +272,8 @@ body {
 
     #grafico {
         margin: 0;
-        width: 15rem;
-        height: 15rem;
+        height: 40vh;
+        width: 40vh;
     }
 
     #botoes {
@@ -357,5 +357,9 @@ body {
     
     #header-main div span:nth-child(1) {
         color: #22A62E;
+    }
+
+    .vaga {
+        height: 10%;
     }
 }
