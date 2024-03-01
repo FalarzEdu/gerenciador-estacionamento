@@ -3,22 +3,21 @@
 ------------------------------------------------- */ 
 
 $("#submit").on('click', (e)=> {
-    e.preventDefault();
 
-    if((document.querySelector("form").checkValidity()) && ($("#pass").val() == $("#passConf").val())) {
-        const obj = {
-            nome: $("#name").val(),
-            senha: $("#pass").val()
-        }
+    // if((document.querySelector("form").checkValidity()) && ($("#pass").val() == $("#passConf").val())) {
+    //     const obj = {
+    //         nome: $("#name").val(),
+    //         senha: $("#pass").val()
+    //     }
 
-        localStorage.setItem('usuario', JSON.stringify(obj));
-        window.location.href="../../../login.html";
-        return;
-    }
+    //     localStorage.setItem('usuario', JSON.stringify(obj));
+    //     window.location.href="../../../login.html";
+    //     return;
+    // }
 
     const campos = document.querySelectorAll("input");
     if((campos[0].value == '') && (campos[1].value == '') && (campos[2].value == '')) {
-        $("input").each((index, element)=>{
+        $("input").each((element)=>{
             $(element).parent().css('border-color', 'red')
             $(element).parent().next("small").html("Campo obrigatório!");
             $(element).parent().next("small").css('visibility', 'visible')
