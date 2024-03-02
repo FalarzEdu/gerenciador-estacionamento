@@ -1,5 +1,10 @@
 <?php
+    // Important files import ################################
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/templates/header.php");
+    // Destroys session when the login page is loaded ########
+    if($userDAO->verifyAuth()) {
+        $userDAO->logout();
+    }
 ?>
 
 <main>
@@ -9,14 +14,14 @@
         <label for="name" class="text-blue-700 text-sm font-bold mb-2">Username</label>
         <div class=" mb-2 flex flex-col">
             <div class="border-2 rounded-md border-blue-700 mb-1">
-                <input type="text" id="name" class=" h-[5vh] w-full pl-3 outline-none" autofocus autocomplete="off" pattern="([A-ZÀ-Ú0-9]*[a-zà-ú0-9]*)+\.([A-ZÀ-Ú0-9]*[a-zà-ú0-9])+" required placeholder="Usuário">
+                <input type="text" id="username" name="username" class=" h-[5vh] w-full pl-3 outline-none" autofocus autocomplete="off" pattern="([A-ZÀ-Ú0-9]*[a-zà-ú0-9]*)+\.([A-ZÀ-Ú0-9]*[a-zà-ú0-9])+" required placeholder="Usuário">
             </div>
             <small class="text-red-600 text-sm invisible">Entrada inválida!</small>
         </div>
         <label for="password" class="text-blue-700 text-sm font-bold mb-2">Password</label>
         <div class="mb-2 outline-8 outline-green-700">
             <div class="h-[5vh] border-2 rounded-md border-blue-700">
-                <input type="password" id="password" class="h-full w-[90%] pl-3 outline-none" autocomplete="off" required minlength="6">
+                <input type="password" id="password" name="password" class="h-full w-[90%] pl-3 outline-none" autocomplete="off" required minlength="6">
                 <i id="relevarSenha" class="fa-solid fa-eye text-[2.5vh]" aria-placeholder="Senha"></i>
             </div>
             <small class="text-sm text-red-600 invisible">Entrada inválida!</small>

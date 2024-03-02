@@ -54,7 +54,7 @@
 
         // Data checkers / modifiers ###################
 
-        public function validateLogin($username, $login);
+        public function validateLogin($username, $password);
         public function changePassword($password, $newPassword);
         public function update($column, $newData, $identifierColumn);
         public function delete(User $user);
@@ -66,7 +66,7 @@
 
         public function __construct(PDO $conn, $coreUrl) {
             $this->conn = $conn;
-            $this->baseUrl = $coreUrl;
+            $this->coreUrl = $coreUrl;
         }
 
         // Constructors ################################
@@ -87,15 +87,15 @@
 
         // Creates an user on the DB using an user obj.
         public function buildUser(User $user) {
+            // Building prepared statement
             $stmt = $this->conn->prepare("INSERT INTO users (username, password, photo) VALUES (:username, :password, :photo)");
-
+            // Binding values tinto the prepared statement
             $stmt->bindValue(":username", $username = $user->getProperty("username"));
             $stmt->bindValue(":password", $password = $user->getProperty("password"));
             $stmt->bindValue(":photo", $_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/public/assets/images/users/user.png");
-
-            //$stmt->execute();
+            // Query execution
+            $stmt->execute();
         }
-
 
         // Finders #####################################
 
@@ -104,7 +104,14 @@
         }
 
         public function findByUsername($username) {
-
+            // Building prepared statement
+            $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = :username");
+            // Binding values tinto the prepared statement
+            $stmt->bindValue(":username", $username);
+            // Query execution
+            $stmt->execute();
+            // Get the user and calls the crete method to return it as an obj
+            return $this->create($stmt->fetch(PDO::FETCH_ASSOC));
         }
 
 
@@ -117,14 +124,39 @@
 
         // Verify if the user is authenticated Denies access to all pages if not.
         public function verifyAuth() {
-
+            return isset($_SESSION["token"]);
         }
 
 
         // Data checkers / modifiers ###################
 
-        public function validateLogin($username, $login) {
+        public function validateLogin($username, $password) {
+            $user = $this->findByUsername($username);
+            if($user) {
+                if(password_verify($password, $user->getProperty("password"))) {
+                    // Creates a session token;
+                    session_start();
+                    $_SESSION["token"] = $user->generateToken();
+                    header("location:" . $this->coreUrl . "src/views/principalPage.php");
+                }
+                else {
+                    // Add password error message here
+                    return false; // Then delete this 
+                }
+            }
+            else {
+                // Add user error message here
+                return false; // Then delete this 
+            }
+        }
 
+        public function logout() {
+            $_SESSION["token"] = "";
+            session_destroy();
+            if($_SERVER["REQUEST_URI"] != "/gerenciador-estacionamento/index.php
+            ") {
+                header("location:" . $this->coreUrl . "index.php");
+            }
         }
 
         public function changePassword($password, $newPassword) {

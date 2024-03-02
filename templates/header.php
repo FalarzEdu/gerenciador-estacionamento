@@ -1,9 +1,16 @@
 <?php
     $auth = true; // Just to have access to the header as it would be with the user logged in, so it's just for debug and develop. Must be deleted sometime.
 
+    // Important files import ################################
     //require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/autoImportClasses.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/connect.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/coreUrl.php");
+    // Models import #########################################
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/src/models/UserDAO.php");
+    // Model classes declaration #############################
+    $userDAO = new UserDAO($conn, $coreUrl);
+    // Session start #########################################
+    //session_start();
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +43,7 @@
         <title>E-stacionar</title>
     </head>
     <!------------------- Authenticated used -------------------------->
-    <?php if(!$auth): ?>
+    <?php if($userDAO->verifyAuth()): ?>
 
     <body class="h-auto max-h-screen">
         <header class="h-[7vh] flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
@@ -49,7 +56,7 @@
             <div class="lg:pr-16 text-white uppercase font-comic hidden lg:block text-menu">
                 <a href="../cadastro-info/cep.html">Configurações</a>
                 <a href="" class="px-8">Sobre</a>
-                <a href="http://<?=$_SERVER["SERVER_NAME"]?>/gerenciador-estacionamento/index.php">Sair</a>
+                <a href="http://<?=$_SERVER["SERVER_NAME"]?>/gerenciador-estacionamento/src/controllers/exit.php">Sair</a>
             </div>
         </header>
 
@@ -57,7 +64,7 @@
 
         <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[2.5vh] lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
             <div class="flex justify-center items-center h-[85%] w-auto">
-                <img src="http://<?=$_SERVER["SERVER_NAME"]?>/gerenciador-estacionamento/public/assets/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
+                <img src="<?php $coreUrl?>public/assets/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
             </div>
             <div class="pr-16 uppercase font-comic hidden lg:block">
                 <a href="" class="text-white">Sobre</a>

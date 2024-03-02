@@ -4,7 +4,7 @@
   "description": "Este projeto visa proporcionar um sistema de controle de vagas de garagem. Suas principais funções são o monitoramento de entrada e saída de veículos, contagem de tempo utilizado por cada veículo em suas respectivas vagas e relação de vagas vazias e utilizadas.",
   "main": "index.js",
   "scripts": {
-    "tailwind": "tailwind -i ./node_modules/tailwindcss/tailwind.css -o ./public/assets/css/style.css --watch",
+    "tailwind": "tailwind -i ./public/assets/css/tailwind.css -o ./public/assets/css/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
