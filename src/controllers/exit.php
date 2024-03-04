@@ -1,5 +1,4 @@
 <?php
-
     // Important files import ################################
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/connect.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/coreUrl.php");
@@ -9,5 +8,3 @@
     $userDAO = new UserDAO($conn, $coreUrl);
     // Logout ################################################
     $userDAO->logout();
-
-?>

@@ -2,7 +2,7 @@
 
     Class Car {
         private $model;
-        private $plate;
+        private $licensePlate;
         private $color;
         private $entry;
 
@@ -30,7 +30,7 @@
         // Finders #####################################
 
         public function findById($id);
-        public function findByPlate($plate);
+        public function findByPlate($licensePlate);
 
         // Delete ######################################
 
@@ -52,8 +52,8 @@
         public function create($data) {
             $car = new Car();
 
-            $car->setProperty("model", $data["model"]);
-            $car->setProperty("licensePlate", $data["licensePlate"]);
+            $car->setProperty("model", strtolower($data["model"]));
+            $car->setProperty("licensePlate", strtolower($data["licensePlate"]));
             $car->setProperty("color", $data["color"]);
             $car->setProperty("entry", $data["entry"]);
 
@@ -65,8 +65,8 @@
             // Building prepared statement
             $stmt = $this->conn->prepare("INSERT INTO cars (model, licensePlate, color, entry) VALUES (:model, :licensePlate, :color, :entry)");
             // Binding values tinto the prepared statement
-            $stmt->bindValue(":model", $car->getProperty("model"));
-            $stmt->bindValue(":licensePlate", $car->getProperty("licensePlate"));
+            $stmt->bindValue(":model", strtolower($car->getProperty("model")));
+            $stmt->bindValue(":licensePlate", strtolower($car->getProperty("licensePlate")));
             $stmt->bindValue(":color", $car->getProperty("color"));
             $stmt->bindValue(":entry", ($car->getProperty("entry")));
             // Query execution
@@ -80,8 +80,15 @@
 
         }
 
-        public function findByPlate($plate) {
-
+        public function findByPlate($licensePlate) {
+            // Building prepared statement
+            $stmt = $this->conn->prepare("SELECT * FROM cars WHERE licensePlate = :licensePlate");
+            // Binding values tinto the prepared statement
+            $stmt->bindValue(":licensePlate", strtolower($licensePlate));
+            // Query execution
+            $stmt->execute();
+            // Query result return
+            return $this->create($stmt->fetch(PDO::FETCH_ASSOC));
         }
 
 

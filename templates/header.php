@@ -1,16 +1,15 @@
 <?php
-    $auth = true; // Just to have access to the header as it would be with the user logged in, so it's just for debug and develop. Must be deleted sometime.
-
     // Important files import ################################
     //require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/autoImportClasses.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/connect.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/config/coreUrl.php");
+    // Utilities import ######################################
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/src/utils/Message.php");
     // Models import #########################################
     require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/src/models/UserDAO.php");
-    // Model classes declaration #############################
+    // Classes declaration ###################################
     $userDAO = new UserDAO($conn, $coreUrl);
-    // Session start #########################################
-    //session_start();
+    $message = new Message($coreUrl);
 ?>
 
 <!DOCTYPE html>
@@ -42,11 +41,12 @@
 
         <title>E-stacionar</title>
     </head>
-    <!------------------- Authenticated used -------------------------->
+
+    <!------------------- Authenticated user -------------------------->
     <?php if($userDAO->verifyAuth()): ?>
 
-    <body class="h-auto max-h-screen">
-        <header class="h-[7vh] flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
+    <body class="h-screen max-h-screen">
+        <header class="h-[7vh] flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between">
             <a href="http:// <?php $_SERVER["SERVER_NAME"] ?> /gerenciador-estacionamento/src/views/principalPage.php" class="lg:hidden"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 lg:hidden"></i></a>
             <i id="menu-abrir" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu"></i>
 
@@ -60,9 +60,10 @@
             </div>
         </header>
 
+    <!------------------- Unauthenticated user -------------------------->
     <?php else: ?>
 
-        <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[2.5vh] lg:h-[17vh] lg:mb-[5vh] lg:justify-between">
+        <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[2.5vh] lg:h-[17vh] lg:mb-2 lg:justify-between">
             <div class="flex justify-center items-center h-[85%] w-auto">
                 <img src="<?php $coreUrl?>public/assets/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
             </div>
@@ -72,3 +73,14 @@
         </header>
 
     <?php endif; ?>
+
+    <!------------------------ Message -------------------------------->
+    <?php if(isset($_SESSION["message"])):?>
+    <aside 
+        class="w-min h-auto text-white rounded-md m-auto mb-2 <?=$_SESSION["status"]?>">
+        <p class="px-6 py-2 whitespace-nowrap uppercase"><?=$_SESSION["message"]?></p>
+    </aside>
+    <?php
+        $_SESSION["message"] = null;
+        endif;
+    ?>
