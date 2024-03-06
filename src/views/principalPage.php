@@ -18,7 +18,7 @@ DON'T KNOW WHAT THIS IS
                     <i class="fa-solid fa-circle-chevron-right"></i>
                     <p class="text-button">Registrar entrada</p>
                 </a>
-                <a href="./registrar-saida.html" class="btn" id="baixa">
+                <a href="<?= $coreUrl?>src/views/carExit.php" class="btn" id="baixa">
                     <i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i>
                     <p class="text-button">Registrar saída</p>
                 </a>

@@ -34,7 +34,7 @@
 
         // Delete ######################################
 
-        public function delete($identifier);
+        public function delete($value);
     }
 
     Class CarDAO implements CarDAOInterface {
@@ -64,7 +64,7 @@
         public function buildCar(Car $car) {
             // Building prepared statement
             $stmt = $this->conn->prepare("INSERT INTO cars (model, licensePlate, color, entry) VALUES (:model, :licensePlate, :color, :entry)");
-            // Binding values tinto the prepared statement
+            // Binding values into the prepared statement
             $stmt->bindValue(":model", strtolower($car->getProperty("model")));
             $stmt->bindValue(":licensePlate", strtolower($car->getProperty("licensePlate")));
             $stmt->bindValue(":color", $car->getProperty("color"));
@@ -83,22 +83,26 @@
         public function findByPlate($licensePlate) {
             // Building prepared statement
             $stmt = $this->conn->prepare("SELECT * FROM cars WHERE licensePlate = :licensePlate");
-            // Binding values tinto the prepared statement
+            // Binding values into the prepared statement
             $stmt->bindValue(":licensePlate", strtolower($licensePlate));
             // Query execution
             $stmt->execute();
             // Query result return
-            return $this->create($stmt->fetch(PDO::FETCH_ASSOC));
+            if($stmt->rowCount()) {
+                return $this->create($stmt->fetch(PDO::FETCH_ASSOC));
+            }        
+            return;    
         }
 
 
         // Delete ######################################
 
-        public function delete($identifier) {
-
+        public function delete($value) {
+            // Building prepared statement
+            $stmt = $this->conn->prepare("DELETE FROM cars WHERE licensePlate = :value");
+            // Binding values into the prepared statement
+            $stmt->bindValue(":value", strtolower($value));
+            // Query execution
+            $stmt->execute();
         }
-
-
     }
-
-?>
