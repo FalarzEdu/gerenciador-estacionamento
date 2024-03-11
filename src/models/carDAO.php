@@ -32,6 +32,10 @@
         public function findById($id);
         public function findByPlate($licensePlate);
 
+        // Utilities ###################################
+
+        public function freeSpots();
+
         // Delete ######################################
 
         public function delete($value);
@@ -94,6 +98,14 @@
             return;    
         }
 
+        // Utilities ###################################
+
+        public function freeSpots() {
+            $stmt = $this->conn->prepare("SELECT * FROM cars");
+            $stmt->execute();
+
+            return $stmt->rowCount();
+        }
 
         // Delete ######################################
 

@@ -24,16 +24,16 @@
 
         <!--- Font styles --------------------------------------------------------------------->
 
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 
         <!--- Font Awesome ----------------------------------------->
 
-        <!-- <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script> -->
+        <script src="https://kit.fontawesome.com/4b312f8f26.js" crossorigin="anonymous"></script>
 
         <!---- Jquery ----------------------------------------------->
         
@@ -46,12 +46,11 @@
     <?php if($userDAO->verifyAuth()): ?>
 
     <body class="h-screen max-h-screen">
-        <header class="h-[7vh] flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between">
-            <a href="http:// <?php $_SERVER["SERVER_NAME"] ?> /gerenciador-estacionamento/src/views/principalPage.php" class="lg:hidden"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 lg:hidden"></i></a>
-            <i id="menu-abrir" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu"></i>
-
+        <header class="h-[8vh] max-h-16 lg:max-h-24 flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between lg:border-none">
+            <a href="<?= $coreUrl?>gerenciador-estacionamento/src/views/principalPage.php" class="lg:hidden md:scale-125"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 lg:hidden"></i></a>
+            <i id="menu-icon" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu md:scale-125"></i>
             <div class="hidden lg:flex justify-center items-center h-[85%] w-auto">
-                <img src="http://<?=$_SERVER["SERVER_NAME"]?>/gerenciador-estacionamento/public/assets/images/Logo.svg" class="h-[95%] w-auto pl-16" alt="">
+                <img src="<?= $coreUrl?>/public/assets/images/Logo.svg" class="h-[95%] w-auto pl-16" alt="">
             </div>
             <div class="lg:pr-16 text-white uppercase font-comic hidden lg:block text-menu">
                 <a href="../cadastro-info/cep.html">Configurações</a>

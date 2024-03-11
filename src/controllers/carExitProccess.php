@@ -14,7 +14,7 @@
 
     // Decodes data received from HTTP request
     $data = json_decode(file_get_contents("php://input"), true);
-    // If "type" is set, this is the frontend request for the DB to check on a specific car license plate. If not, it is the form submission to delete the car on the DB.
+    // If $data is set, the request came from the frontend fetch
     if(isset($data)) {
         if($carDAO->findByPlate($data["param"])) {
             // Retrieves data

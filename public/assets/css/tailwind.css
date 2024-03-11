@@ -3,3 +3,17 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply h-20 w-80 md:h-24 md:w-[24rem] lg:h-[4.5rem] lg:w-[22rem] 2xl:h-[10vh] max-w-sm 2xl:w-1/2 2xl:max-w-[30rem] border-[6px] 2xl:border-8 rounded-full flex items-center relative transition-all duration-300;
+    }
+
+    .btn-pointer-icon {
+        @apply text-7xl md:text-[5.5rem] lg:text-[4rem] 2xl:text-[10vh] absolute left-[-5px]
+    }
+
+    .color-pick {
+        @apply justify-self-center self-center appearance-none rounded-full border-black border-2 sm:border-4 h-[14vmax] w-[14vmax] max-h-[5.25rem] max-w-[5.25rem] md:max-h-[7.5rem] md:max-w-[7.5rem] lg:max-h-[4.5rem] lg:max-w-[4.5rem] lg:border-2 checked:scale-75 transition-all duration-300
+    }
+}
