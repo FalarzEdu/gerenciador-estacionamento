@@ -45,12 +45,12 @@
     <!------------------- Authenticated user -------------------------->
     <?php if($userDAO->verifyAuth()): ?>
 
-    <body class="h-screen max-h-screen">
+    <body class="">
         <header class="h-[8vh] max-h-16 lg:max-h-24 flex items-center justify-between bg-white lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between lg:border-none">
             <a href="<?= $coreUrl?>src/views/principalPage.php" class="lg:hidden md:scale-125"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 lg:hidden"></i></a>
             <i id="menu-icon" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu md:scale-125"></i>
             <div class="hidden lg:flex justify-center items-center h-[85%] w-auto">
-                <img src="<?= $coreUrl?>/public/assets/images/Logo.svg" class="h-[95%] w-auto pl-16" alt="">
+                <img src="<?= $coreUrl?>public/assets/images/Logo.svg" class="h-[95%] w-auto pl-16" alt="">
             </div>
             <div class="lg:pr-16 text-white uppercase font-comic hidden lg:block text-menu">
                 <a href="../cadastro-info/cep.html">Configurações</a>
@@ -64,7 +64,7 @@
 
         <header class="flex justify-center items-center px-8 bg-blue-700 w-full h-[20vh] mb-[2.5vh] lg:h-[17vh] lg:mb-2 lg:justify-between">
             <div class="flex justify-center items-center h-[85%] w-auto">
-                <img src="<?php $coreUrl?>public/assets/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
+                <img src="http://<?= $_SERVER["SERVER_NAME"]?>/gerenciador-estacionamento/public/assets/images/Logo.svg" class="h-[95%] w-auto lg:h-full lg:w-auto" alt="">
             </div>
             <div class="pr-16 uppercase font-comic hidden lg:block">
                 <a href="" class="text-white">Sobre</a>
