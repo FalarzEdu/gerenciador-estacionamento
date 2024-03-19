@@ -1,12 +1,13 @@
 <?php
 
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/src/utils/Message.php");
+
     class User {
         private $id;
         private $username;
         private $email;
         private $enterprise;
         private $password;
-        private $passwordConf;
         private $photo;
         private $token;
 
@@ -68,10 +69,12 @@
     Class UserDAO implements UserDAOInterface {
         private $conn;
         private $coreUrl;
+        private $message;
 
         public function __construct(PDO $conn, $coreUrl) {
             $this->conn = $conn;
             $this->coreUrl = $coreUrl;
+            $this->message = new Message($coreUrl);
         }
 
         // Constructors ################################
@@ -128,27 +131,21 @@
 
         // Creates an user on the DB using an user obj.
         public function buildUser(User $user) {
-            if(!$userDAO->findByUsername($user->getProperty("username"))) {
-                if($user->getProperty("password") == $user->getProperty("confPassword")) {
-                    // Building prepared statement
-                    $stmt = $this->conn->prepare("INSERT INTO users (username, password, photo) VALUES (:username, :password, :photo)");
-                    // Binding values tinto the prepared statement
-                    $stmt->bindValue(":username", $username = $user->getProperty("username"));
-                    $stmt->bindValue(":password", $password = $user->getProperty("password"));
-                    $stmt->bindValue(":photo", $_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/public/assets/images/users/user.png");
-                    // Query execution
-                    $stmt->execute();
-                    // Success message setting and redirection to login
-                    $message->setMessage("User registered! Now log in.", "success", "index.php");
-                }
-                else {
-                    // Error message setting and redirect to register page
-                    $message->setMessage("Passwords don't match!", "error", "src/views/registerUser.php");
-                }
+            if(!$this->findByUsername($user->getProperty("username"))) {
+                // Building prepared statement
+                $stmt = $this->conn->prepare("INSERT INTO users (username, password, photo) VALUES (:username, :password, :photo)");
+                // Binding values tinto the prepared statement
+                $stmt->bindValue(":username", $username = $user->getProperty("username"));
+                $stmt->bindValue(":password", $password = $user->getProperty("password"));
+                $stmt->bindValue(":photo", $_SERVER["DOCUMENT_ROOT"] . "/gerenciador-estacionamento/public/assets/images/users/user.png");
+                // Query execution
+                $stmt->execute();
+                // Success message setting and redirection to login
+                $this->message->setMessage("User registered! Now log in.", "success", "index.php");
             }
             else {
                 // Error message setting and redirect to register page
-                $message->setMessage("Username already been used!", "error", "src/views/registerUser.php");
+                $this->message->setMessage("Username already been used!", "error", "src/views/registerUser.php");
             }
         }
 
@@ -156,22 +153,17 @@
             $user = $this->findByUsername($username);
             if($user) {
                 if(password_verify($password, $user->getProperty("password"))) {
-                    echo "a";
                     // Creates a session token;
                     session_start();
                     $_SESSION["token"] = $user->generateToken();
                     header("location:" . $this->coreUrl . "src/views/principalPage.php");
                 }
                 else {
-                    // Add password error message here
-                    echo "b";
-                    return false; // Then delete this 
+                    $this->message->setMessage("Incorrect password!", "error", "index.php");
                 }
             }
             else {
-                echo "c";
-                // Add user error message here
-                return false; // Then delete this 
+                $this->message->setMessage("User do not exist!", "error", "index.php");
             }
         }
 

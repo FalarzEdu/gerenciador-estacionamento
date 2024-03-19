@@ -46,11 +46,11 @@
         <section class="h-auto mt-[4vh] flex justify-center items-center lg:gap-28">
             <button class="btn border-green-500 hover:bg-green-300" id="submit" type="submit">
                 <i class="fa-solid fa-circle-chevron-right text-green-500 btn-pointer-icon"></i>
-                <p class="text-green-500 text-button m-auto text-center pl-[8vh] font-bold text-xl  md:text-3xl lg:text-2xl">Registrar entrada</p>
+                <p class="text-green-500 text-button m-auto text-center pl-8 font-bold text-2xl  md:text-3xl lg:text-2xl">Registrar entrada</p>
             </button>
             <a class="btn hidden lg:flex border-blue-700 w-64 lg:hover:bg-blue-300" href=" <?=$coreUrl?>src/views/principalPage.php">
                 <img src="<?=$coreUrl?>public/assets/images/seta.svg" alt="" class="text-[10vh] text-blue-700 absolute left-[25px]">
-                <p class="text-blue-700 text-button m-auto text-center pl-[8vh] font-bold">Voltar</p>
+                <p class="text-blue-700 text-button m-auto text-center pl-8 font-bold lg:text-xl">Voltar</p>
             </a>
         </section>
     </form>

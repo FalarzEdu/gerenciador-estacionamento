@@ -11,8 +11,8 @@
                 </div>
                 <div class="lg:flex lg:justify-center lg:items-center lg:h-[37vh]">
                     <div class="w-[260px] mx-auto mt-[5vh] scale-120 relative 2xl:scale-150">
-                        <img src="<?= $coreUrl?>public/assets/images/placa.svg" alt="" class="relative md:scale-150 lg:scale-125">
-                        <input type="text" name="licensePlate" id="licensePlate" class="absolute text-black left-[15px] top-[25px] font-comic text-[46px] text-center w-[230px] h-[60px] bg-transparent uppercase md:scale-150 lg:scale-125" pattern="([a-z]{3})(\d{1})([a-z]{1})(\d{2})" maxlength="7" minlength="7" required>
+                        <img src="<?= $coreUrl?>public/assets/images/placa.svg" alt="" class="relative scale-110 md:scale-150 lg:scale-125">
+                        <input type="text" name="licensePlate" id="licensePlate" class="absolute text-black left-[15px] top-[25px] font-comic text-[46px] text-center w-[230px] h-[60px] bg-transparent uppercase scale-110 md:scale-150 lg:scale-125" pattern="([a-z]{3})(\d{1})([a-z]{1})(\d{2})" maxlength="7" minlength="7" required>
                     </div>
                 </div>
                 
@@ -40,13 +40,13 @@
             </section>
         </section>
         <section class="h-auto mt-[5vh] flex justify-center items-center lg:gap-28">
-            <button id="submit" class="h-[10vh] lg:h-[12vh] 2xl:h-[10vh] w-[90vw] max-w-sm lg:w-1/3 2xl:w-1/2 lg:max-w-[24rem] 2xl:max-w-[30rem] bg-white border-[6px] 2xl:border-8 border-red-700 rounded-full flex items-center relative hover:bg-red-300">
-                <i class="fa-solid fa-rotate-180 fa-circle-chevron-right text-[10vh] lg:text-[12vh] 2xl:text-[10vh] text-red-700 absolute left-[-10px]"></i>
-                <p class="text-red-700 text-button m-auto text-center pl-[8vh] font-bold text-xl">Registrar saída</p>
+            <button id="submit" class="btn border-red-700 hover:bg-red-300">
+                <i class="fa-solid fa-rotate-180 fa-circle-chevron-right btn-pointer-icon text-red-700"></i>
+                <p class="text-red-700 text-button m-auto text-center pl-8 font-bold text-2xl md:text-3xl lg:text-2xl">Registrar saída</p>
             </button>
-            <a class="h-[10vh] lg:h-[12vh] lg:max-h-[7rem] bg-white border-[6px] border-blue-700 rounded-full items-center relative hidden lg:flex w-56 2xl:w-64 lg:hover:bg-blue-300" href="<?=$coreUrl?>src/views/principalPage.php">
+            <a class="hidden lg:flex btn w-64 border-blue-700 lg:hover:bg-blue-300" href="<?=$coreUrl?>src/views/principalPage.php">
                 <img src="<?= $coreUrl?>public/assets/images/seta.svg" alt="" class="text-[10vh] text-blue-700 absolute left-[25px]">
-                <p class="text-blue-700 text-button m-auto text-center pl-[8vh] font-bold">Voltar</p>
+                <p class="text-blue-700 text-button m-auto text-center pl-8 font-bold lg:text-xl">Voltar</p>
             </a>
         </section>
     </form>

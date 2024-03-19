@@ -42,8 +42,8 @@
         <title>E-stacionar</title>
     </head>
 
-<body class="h-screen max-h-screen lg:grid lg:grid-cols-10">
-    <header class="h-[6vh] flex items-center justify-between bg-white border-b-4 border-black lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between lg:border-none lg:col-start-4 lg:col-end-11 lg:row-start-1 lg:row-end-3 z-10">
+<body class="h-screen lg:grid lg:grid-cols-10">
+    <header class="h-[8vh] max-h- flex items-center justify-between bg-white border-b-2 border-black lg:bg-blue-700 lg:h-[17vh] lg:mb-2 lg:justify-between lg:border-none lg:col-start-4 lg:col-end-11 lg:row-start-1 lg:row-end-3 z-10">
         <a href="<?= $coreUrl?>gerenciador-estacionamento/src/views/principalPage.php" class="lg:hidden  md:scale-125"><i class="fa-solid fa-arrow-right fa-rotate-180 h-[30px] w-[30px] text-[30px] ml-5 text-blue-700 lg:hidden"></i></a>
         <i id="menu-icon" class="fa-solid fa-bars h-[30px] w-[30px] text-[30px] mr-5 text-blue-700 lg:!hidden toggle-menu md:scale-125"></i>
         <div class="hidden lg:flex justify-center items-center h-[85%] w-auto">
@@ -56,9 +56,9 @@
         </div>
     </header>
 
-    <main class="grid h-[94vh] lg:h-screen lg:grid-cols-10 lg:col-start-1 col-end-11 lg:row-start-1 lg:row-end-2">
-        <section class="flex flex-col gap-[2vh]lg:grid lg:gap-1 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-4">
-            <section class="flex flex-col justify-center items-center gap-3 h-[14vh] bg-blue-700 text-white font-goldman lg:h-[17vh] ">
+    <main class="grid h-[92vh] lg:h-screen lg:grid-cols-10 lg:col-start-1 col-end-11 lg:row-start-1 lg:row-end-2">
+        <section class="flex flex-col max-lg:justify-between lg:grid lg:gap-1 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-4">
+            <section class="flex flex-col justify-center items-center h-[14vh] bg-blue-700 text-white font-goldman lg:h-[17vh] ">
                 <h2 class="text-3xl md:text-5xl lg:text-3xl">Available spots</h2>
                 <p class="text-3xl md:text-5xl lg:text-3xl">
                     <span class="text-green-500 text-5xl md:text-7xl lg:text-5xl font-bold">60</span>
@@ -66,20 +66,20 @@
                     100
                 </p>
             </section>
-            <section class="flex justify-center w-[42vh] max-w-96 m-auto">
+            <section class="flex justify-center w-[38vh] max-w-xl mx-auto">
                 <canvas id="donut" class=""></canvas>
             </section>
-            <section class="flex flex-col gap-[1vh] self-end h-[25vh] mx-auto mb-4 text-xl md:text-2xl lg:h-min lg:text-lg">
-                <a href="./carEntry.php" class="border-green-500 hover:bg-green-300 btn" id="carEntry">
-                    <i class="fa-solid fa-circle-chevron-right text-green-500 btn-pointer-icon"></i>
-                    <p class="text-green-500 text-button m-auto text-center pl-4 font-bold">Registrar entrada</p>
+            <section class="flex flex-col gap-[1vh] self-end h-min mx-auto mb-4 text-xl lg:h-min lg:text-lg">
+                <a href="./carEntry.php" class="border-green-500 hover:bg-green-300 btn lg:h-[3.5rem] lg:w-[16rem]" id="carEntry">
+                    <i class="fa-solid fa-circle-chevron-right text-green-500 btn-pointer-icon lg:text-[3.5rem]"></i>
+                    <p class="text-green-500 m-auto text-center pl-8 font-bold text-xl md:text-2xl lg:text-xl">Registrar entrada</p>
                 </a>
-                <a href="<?= $coreUrl?>src/views/carExit.php" class="border-red-700 hover:bg-red-400 btn" id="carExit">
-                    <i class="fa-solid fa-circle-chevron-right fa-rotate-180 text-red-700 btn-pointer-icon"></i>
-                    <p class="text-red-700 text-button m-auto text-center pl-4 font-bold">Registrar saída</p>
+                <a href="<?= $coreUrl?>src/views/carExit.php" class="border-red-700 hover:bg-red-400 btn lg:h-[3.5rem] lg:w-[16rem]" id="carExit">
+                    <i class="fa-solid fa-circle-chevron-right fa-rotate-180 text-red-700 btn-pointer-icon lg:text-[3.5rem]"></i>
+                    <p class="text-red-700 m-auto text-center pl-8 font-bold text-xl md:text-2xl lg:text-xl">Registrar saída</p>
                 </a>
-                <a href="./vagas-lista.html" class="border-blue-700 hover:bg-blue-400 btn ">
-                    <p class="text-blue-700 text-button m-auto text-center font-bold">Vagas</p>
+                <a href="./vagas-lista.html" class="border-blue-700 hover:bg-blue-400 btn lg:h-[3.5rem] lg:w-[16rem]">
+                    <p class="text-blue-700 m-auto text-center font-bold">Vagas</p>
                 </a>
             </section>
         </section>
